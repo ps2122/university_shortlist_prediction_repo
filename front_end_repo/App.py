@@ -27,21 +27,21 @@ st.subheader("Check it now")
 col1, col2 = st.columns(2)
 with col1:
     pass
-    grade_10 = st.text_input("Add your 10th grade performance (%)")
+    grade_10 = st.number_input("Add your 10th grade performance (%)", min_value=0.0, max_value=100.0, step=0.01, format="%.2f")
 with col2:
     pass
 
 col1, col2 = st.columns(2)
 with col1:
     pass
-    grade_12 = st.text_input("Add your 12th grade performance (%)")
+    grade_12 = st.number_input("Add your 12th grade performance (%)", min_value=0.0, max_value=100.0, step=0.01, format="%.2f")
 with col2:
     pass
 
 col1, col2 = st.columns(2)
 with col1:
     pass
-    graduation_score = st.text_input("Add your graduation performance (%)")
+    graduation_score = st.number_input("Add your graduation performance (%)", min_value=0.0, max_value=100.0, step=0.01, format="%.2f")
 with col2:
     pass
 
@@ -50,7 +50,7 @@ with col1:
     pass
     gender = st.selectbox(
     "Choose your gender",
-    ["","Female", "Male"],
+    ["Female", "Male"],
     index=0,
 )
 with col2:
@@ -61,16 +61,18 @@ with col1:
     pass
     graduation_type = st.selectbox(
     "Choose your graduation type",
-    ["","Engineer", "Non-Engineer"],
+    ["Engineer", "Non-Engineer"],
     index=0,
 )
 with col2:
     pass
+if graduation_type is None:
+    st.write("Please select Graduation Type")
 
 col1, col2 = st.columns(2)
 with col1:
     pass
-    work_ex = st.text_input("Add your work experience (months)")
+    work_ex = st.number_input("Add your work experience (months)", min_value=0.0, max_value=100.0, step=0.01, format="%.2f")
 with col2:
     pass
 
@@ -79,7 +81,7 @@ with col1:
     pass
     seat_category = st.selectbox(
     "Choose your category",
-    ["","General", "EWS", "NC_OBC", "SC", "ST"],
+    ["General", "EWS", "NC_OBC", "SC", "ST"],
     index=0,
 )
 with col2:
@@ -88,7 +90,7 @@ with col2:
 col1, col2 = st.columns(2)
 with col1:
     pass
-    cat_score = st.text_input("Add your CAT score (0-100)")
+    cat_score = st.number_input("Add your CAT score (0-100)", min_value=0.0, max_value=100.0, step=0.01, format="%.2f")
 with col2:
     pass
 
